@@ -17,7 +17,7 @@ export class SpotifyService {
 	private encoded = btoa(this.client_id + ':' + this.client_secret);
     private base64 = 'OTk2MDgwOTM3ZWJiNDU5NGEwOTc5MTQ2YzljMGMxMjE6MGJkYTNjZmQyMTNjNDYyMmJjNmM1NjI1ODY1NjhlYzg=';
 
-	constructor(private _http: Http) {
+	constructor(private _https: Http) {
 
 	}
 
@@ -29,7 +29,7 @@ export class SpotifyService {
        
         headers.append('Content-Type' , 'application/x-www-form-urlencoded');
 
-        return this._http.post('https://accounts.spotify.com/api/token', params , {headers : headers} )
+        return this._https.post('https://accounts.spotify.com/api/token', params , {headers : headers} )
         .map(res=> res.json());
 	}
 
@@ -39,7 +39,7 @@ export class SpotifyService {
        	let headers = new Headers();
        	headers.append('Authorization' , 'Bearer ' + token);
 
-       	return this._http.get(this.searchUrl , {headers : headers})
+       	return this._https.get(this.searchUrl , {headers : headers})
        	.map(res => res.json());   
     }
 
@@ -49,7 +49,7 @@ export class SpotifyService {
        	let headers = new Headers();
        	headers.append('Authorization' , 'Bearer ' + token);
 
-       	return this._http.get(this.artistUrl , {headers : headers})
+       	return this._https.get(this.artistUrl , {headers : headers})
        	.map(res => res.json());   
     }
 
@@ -59,7 +59,7 @@ export class SpotifyService {
        let headers = new Headers();
        headers.append('Authorization' , 'Bearer ' + token);
 
-       return this._http.get(this.albumsUrl , {headers : headers})
+       return this._https.get(this.albumsUrl , {headers : headers})
        .map(res => res.json());      
 	}
 
@@ -71,7 +71,7 @@ export class SpotifyService {
        let headers = new Headers();
        headers.append('Authorization' , 'Bearer ' + token);
 
-       return this._http.get(this.albumUrl , {headers : headers})
+       return this._https.get(this.albumUrl , {headers : headers})
        .map(res => res.json());
 	}
 }
