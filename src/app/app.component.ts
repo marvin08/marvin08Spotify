@@ -6,7 +6,7 @@ import { SpotifyService } from './services/spotify.service';
 
 
 @Component({
-  //moduleId: module.id,
+  moduleId: module.id,
   selector: 'app-root',
   templateUrl: './app.component.html',
   entryComponents: [AboutComponent, SearchComponent],
