@@ -6,3 +6,4 @@ First Download the CORS extension from the following link :-
 (ii) For Firefox -> https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/.
 
 And then visit this URL -> https://marvin08spotify.herokuapp.com/.
+# NOTE : Turn on the CORS extension only when you are using the web-app and turn it off after use.
