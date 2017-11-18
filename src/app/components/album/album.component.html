@@ -1,12 +1,12 @@
 <div id="album" *ngIf="album">
         <header class="album-header">
             <div class="row">   
-              <div class="col-md-4">
+              <div class="col-md-6">
                   <div *ngIf="album.images.length > 0">
                       <img src="{{album.images[0].url}}" class="album-thumb">
                   </div>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-6">
                     <h4 *ngIf="album.artists.length > 0"><span *ngFor="let artist of album.artists">
                       {{artist.name}}
                     </span></h4>
